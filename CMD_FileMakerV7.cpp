@@ -36,17 +36,17 @@ int main() {
 	//Controls//
 
 	int NumOfSets = 4; //Number of sets, usually 4 for A, B, C, D. Max is 4 sets currently
-	int NumOfModels = 15875; //Total possible number of models. Will be used for largest array possible. Classical: 16281
+	int NumOfModels = 20412; //Total possible number of models. Will be used for largest array possible. Classical: 16281. TypeII: 20412. RRL: 15975.
 	int NumOfModes = 10; //Number of modes investigated. Max is 10. Must have the positive growth files named accordingly with prefix and suffix below!
 	
-	char log_directory_prefix_SetA[50] = "LINA_RRL/SetA/LOGS/logs_"; //Prefix to log_directory, suffix is model number. This is where history file should be
-	char log_directory_prefix_SetB[50] = "LINA_RRL/SetB/LOGS/logs_"; //Prefix to log_directory, suffix is model number. This is where history file should be
-	char log_directory_prefix_SetC[50] = "LINA_RRL/SetC/LOGS/logs_"; //Prefix to log_directory, suffix is model number. This is where history file should be
-	char log_directory_prefix_SetD[50] = "LINA_RRL/SetD/LOGS/logs_"; //Prefix to log_directory, suffix is model number. This is where history file should be
+	char log_directory_prefix_SetA[50] = "LINA_classical/LOGS_A/LOGS_A/LOGS_A"; //Prefix to log_directory, suffix is model number. This is where history file should be. For me LINA_reruns/SetA/LOGS/logs_   
+	char log_directory_prefix_SetB[50] = "LINA_classical/LOGS_B/LOGS_B/LOGS_B"; //Prefix to log_directory, suffix is model number. This is where history file should be
+	char log_directory_prefix_SetC[50] = "LINA_classical/LOGS_C/LOGS_C/LOGS_C"; //Prefix to log_directory, suffix is model number. This is where history file should be
+	char log_directory_prefix_SetD[50] = "LINA_classical/LOGS_D/LOGS_D/LOGS_D"; //Prefix to log_directory, suffix is model number. This is where history file should be
 	
 	char HistoryFileName[50] = "history.data"; //Normally should be "history.data"
-	char inputFileName_ForPositiveGrowthModels[50] = "PostiveGrowthRRL"; //input File with model parameters that have positve growth rates. Will have prefix/suffix for mode that is defined below. Must be in working directory.
-	char outputFileName[50] = "CMDdataRRL"; //output file with CMD data in it. Will have prefix for mode defined below as well as the set suffix.
+	char inputFileName_ForPositiveGrowthModels[50] = "PostiveGrowthClassical"; //input File with model parameters that have positve growth rates. Will have prefix/suffix for mode that is defined below. Must be in working directory.
+	char outputFileName[50] = "CMDdataClassical"; //output file with CMD data in it. Will have prefix for mode defined below as well as the set suffix.
 	
 	char FU_FilePrefix[50] = "FU_"; //Prefix to input/output files that contain data for FU mode
 	char FO_FilePrefix[50] = "FO_"; //Prefix to input/output files that contain data for FO mode
@@ -65,7 +65,7 @@ int main() {
 	char SetD_Suffix[10] = "_SetD.dat"; //Suffix to input/output file for SetD
 	
 	bool MakeCMDsWithPython = false; //If true, will try to run CMD_plotter.py in order to make CMDs. Python program may need to be edited before running.
-	bool ClassicalFormat = false; //If true, will use file formatting that Nick had in his classical models. False will use mine from the type II models.
+	bool ClassicalFormat = true; //If true, will use file formatting that Nick had in his classical models. False will use mine from the type II models.
 	bool MakeMagCorrection = true; //If true, will account for abs mag bug in version 11701 - factor of Lsun problem. If false will use values from history file.
 	
 	///////////////////////////////////////
